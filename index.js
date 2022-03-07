@@ -12,5 +12,30 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+
+  let tutorial = tutorials.map(tutorial => tutorial)
+  let sentences = tutorial.map(sentence => sentence.split(" "))
+  let capitalizedSentences = sentences.map(function (sentence) {
+    return sentence.map(function (word) {
+      return word[0].toUpperCase() + word.substring(1);
+    });
+  })
+
+  let joinedSentences = capitalizedSentences.map(function (arr) {
+    return arr.join(" ");
+    
+  })
+  return joinedSentences//.map(function (sentence) {
+    //return sentence.map(function (word) {
+      //return word[0].toUpperCase() + word.substring(1);
+    //})
+  //});
 }
+
+//return tutorials.map(tutorial => tutorial[0].toUpperCase() + (tutorial.substring(1)))
+
+
+//return tutorial.split(" ").map(function (word) {
+  //return word[0].toUpperCase() + word.substring(1);
+//})
+
